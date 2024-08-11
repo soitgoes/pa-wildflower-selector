@@ -107,6 +107,18 @@ spec:
                   name: app
                   key: IMAGE_URLS_SHEET_ID
                   optional: false
+            - name: PAC_API_BASE_URL
+              valueFrom:
+                secretKeyRef:
+                  name: pac-api
+                  key: PAC_API_BASE_URL
+                  optional: false
+            - name: PAC_API_KEY
+              valueFrom:
+                secretKeyRef:
+                  name: pac-api
+                  key: PAC_API_KEY
+                  optional: false
             - name: SUPERPLANTS_CSV_URL
               valueFrom:
                 secretKeyRef:
@@ -143,6 +155,11 @@ spec:
                   name: app
                   key: SERVICE_ACCOUNT
                   optional: false
+            - name: PAC_API_BASE_URL
+              valueFrom:
+                secretKeyRef:
+                  name: pac_api
+                  key
           envFrom:
             - configMapRef:
                 name: app-config
